@@ -18,7 +18,9 @@ import java.util.List;
 @CrossOrigin("*")
 public class App {
 
-    Dotenv dotenv = Dotenv.load();
+    Dotenv dotenv = Dotenv.configure()
+            .ignoreIfMissing()
+            .load();
     String connectionString = dotenv.get("CONNECTION_STRING");
 
     ServerApi serverApi = ServerApi.builder()
