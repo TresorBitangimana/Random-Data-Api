@@ -146,7 +146,7 @@
                 <div class="hero-url-preview">
                     <span class="url-method">GET</span>
                     <span class="url-text"
-                        >https://random-data-api-vvy8.onrender.com/api/random/users/<em
+                        >https://random-data-api-iuit.onrender.com/api/random/users/<em
                             >{count}</em
                         ></span
                     >
@@ -201,28 +201,10 @@
                     </div>
                 </section>
 
-                <!-- Authentication -->
-                <section class="doc-section" id="authentication">
-                    <div class="section-header">
-                        <span class="section-num">02</span>
-                        <h2>Authentication</h2>
-                    </div>
-                    <div class="callout callout-info">
-                        <span class="callout-icon">ℹ️</span>
-                        <div>
-                            <strong>No authentication required.</strong><br />
-                            This API is completely open and free to use. No API
-                            key, token, or header is needed. Simply make a
-                            <code>GET</code> request to any endpoint and you'll
-                            receive data instantly.
-                        </div>
-                    </div>
-                </section>
-
                 <!-- Errors -->
                 <section class="doc-section" id="errors">
                     <div class="section-header">
-                        <span class="section-num">03</span>
+                        <span class="section-num">02</span>
                         <h2>Error Handling</h2>
                     </div>
                     <p class="section-desc">
@@ -286,6 +268,35 @@
                     </div>
                 </section>
 
+                <h3 class="subsection-title">Path Parameters</h3>
+                <div class="table-wrapper">
+                    <table class="doc-table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>count</code></td>
+                                <td>Integer</td>
+                                <td>
+                                    <span class="badge-required"
+                                        >Not Required</span
+                                    >
+                                </td>
+                                <td>
+                                    Number of user objects to generate (e.g.
+                                    <code>5</code> returns 5 users)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <!-- ===== USERS ENDPOINT ===== -->
                 <section class="doc-section endpoint-section" id="users">
                     <div class="endpoint-tag">
@@ -295,7 +306,7 @@
                         >
                     </div>
                     <div class="section-header">
-                        <span class="section-num">04</span>
+                        <span class="section-num">03</span>
                         <h2>Random Users</h2>
                     </div>
                     <p class="section-desc">
@@ -305,47 +316,18 @@
                         <code>{count}</code> with any positive integer.
                     </p>
 
-                    <h3 class="subsection-title">Path Parameters</h3>
-                    <div class="table-wrapper">
-                        <table class="doc-table">
-                            <thead>
-                                <tr>
-                                    <th>Parameter</th>
-                                    <th>Type</th>
-                                    <th>Required</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>count</code></td>
-                                    <td>Integer</td>
-                                    <td>
-                                        <span class="badge-required"
-                                            >Required</span
-                                        >
-                                    </td>
-                                    <td>
-                                        Number of user objects to generate (e.g.
-                                        <code>5</code> returns 5 users)
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
                     <h3 class="subsection-title">Example Request</h3>
                     <div class="code-block single-line">
                         <div class="code-header">
                             <span>Request URL</span>
                             <button
                                 class="copy-btn"
-                                data-copy="https://random-data-api-vvy8.onrender.com/api/random/users/3"
+                                data-copy="https://random-data-api-iuit.onrender.com/api/random/users/3"
                             >
                                 Copy
                             </button>
                         </div>
-                        <pre><code>GET https://random-data-api-vvy8.onrender.com/api/random/users/3</code></pre>
+                        <pre><code>GET https://random-data-api-iuit.onrender.com/api/random/users/3</code></pre>
                     </div>
 
                     <h3 class="subsection-title">Example Response</h3>
@@ -377,69 +359,6 @@
     }
 ]</code></pre>
                     </div>
-
-                    <h3 class="subsection-title">Response Fields</h3>
-                    <div class="table-wrapper">
-                        <table class="doc-table">
-                            <thead>
-                                <tr>
-                                    <th>Field</th>
-                                    <th>Type</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>name</code></td>
-                                    <td>String</td>
-                                    <td>Full name of the generated user</td>
-                                </tr>
-                                <tr>
-                                    <td><code>email</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        Email address associated with the user
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>password</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        Bcrypt-hashed password (cost factor 12,
-                                        prefixed <code>$2b$12$</code>)
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Live Try It -->
-                    <div class="try-it-box" id="try-users">
-                        <h3 class="try-title">⚡ Try It Live</h3>
-                        <div class="try-controls">
-                            <label>Count (1–20)</label>
-                            <input
-                                type="number"
-                                id="users-count"
-                                value="2"
-                                min="1"
-                                max="20"
-                                class="try-input"
-                            />
-                            <button
-                                class="try-btn"
-                                onclick="tryEndpoint('users')"
-                            >
-                                Send Request
-                            </button>
-                        </div>
-                        <div class="try-url-preview" id="users-url-preview">
-                            https://random-data-api-vvy8.onrender.com/api/random/users/2
-                        </div>
-                        <div class="try-response" id="users-try-response">
-                            Response will appear here…
-                        </div>
-                    </div>
                 </section>
 
                 <!-- ===== GRADES ENDPOINT ===== -->
@@ -461,44 +380,18 @@
                         (exam, quiz, homework).
                     </p>
 
-                    <h3 class="subsection-title">Path Parameters</h3>
-                    <div class="table-wrapper">
-                        <table class="doc-table">
-                            <thead>
-                                <tr>
-                                    <th>Parameter</th>
-                                    <th>Type</th>
-                                    <th>Required</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>count</code></td>
-                                    <td>Integer</td>
-                                    <td>
-                                        <span class="badge-required"
-                                            >Required</span
-                                        >
-                                    </td>
-                                    <td>Number of grade records to generate</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
                     <h3 class="subsection-title">Example Request</h3>
                     <div class="code-block single-line">
                         <div class="code-header">
                             <span>Request URL</span>
                             <button
                                 class="copy-btn"
-                                data-copy="https://random-data-api-vvy8.onrender.com/api/random/grades/1"
+                                data-copy="https://random-data-api-iuit.onrender.com/api/random/grades/1"
                             >
                                 Copy
                             </button>
                         </div>
-                        <pre><code>GET https://random-data-api-vvy8.onrender.com/api/random/grades/1</code></pre>
+                        <pre><code>GET https://random-data-api-iuit.onrender.com/random/grades/1</code></pre>
                     </div>
 
                     <h3 class="subsection-title">Example Response</h3>
@@ -537,87 +430,6 @@
     }
 ]</code></pre>
                     </div>
-
-                    <h3 class="subsection-title">Response Fields</h3>
-                    <div class="table-wrapper">
-                        <table class="doc-table">
-                            <thead>
-                                <tr>
-                                    <th>Field</th>
-                                    <th>Type</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>student_id</code></td>
-                                    <td>Number</td>
-                                    <td>
-                                        Unique numeric identifier for the
-                                        student
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>class_id</code></td>
-                                    <td>Number</td>
-                                    <td>Identifier for the class or course</td>
-                                </tr>
-                                <tr>
-                                    <td><code>scores</code></td>
-                                    <td>Array&lt;Object&gt;</td>
-                                    <td>
-                                        One or more scored assessments for this
-                                        student/class pair
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>scores[].type</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        Assessment category —
-                                        <code>"exam"</code>,
-                                        <code>"quiz"</code>, or
-                                        <code>"homework"</code>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>scores[].score</code></td>
-                                    <td>Number</td>
-                                    <td>
-                                        Floating-point score for that assessment
-                                        (0–100 range)
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="try-it-box" id="try-grades">
-                        <h3 class="try-title">⚡ Try It Live</h3>
-                        <div class="try-controls">
-                            <label>Count (1–20)</label>
-                            <input
-                                type="number"
-                                id="grades-count"
-                                value="2"
-                                min="1"
-                                max="20"
-                                class="try-input"
-                            />
-                            <button
-                                class="try-btn"
-                                onclick="tryEndpoint('grades')"
-                            >
-                                Send Request
-                            </button>
-                        </div>
-                        <div class="try-url-preview" id="grades-url-preview">
-                            https://random-data-api-vvy8.onrender.com/api/random/grades/2
-                        </div>
-                        <div class="try-response" id="grades-try-response">
-                            Response will appear here…
-                        </div>
-                    </div>
                 </section>
 
                 <!-- ===== COMPANIES ENDPOINT ===== -->
@@ -639,46 +451,18 @@
                         social links, and founding metadata.
                     </p>
 
-                    <h3 class="subsection-title">Path Parameters</h3>
-                    <div class="table-wrapper">
-                        <table class="doc-table">
-                            <thead>
-                                <tr>
-                                    <th>Parameter</th>
-                                    <th>Type</th>
-                                    <th>Required</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>count</code></td>
-                                    <td>Integer</td>
-                                    <td>
-                                        <span class="badge-required"
-                                            >Required</span
-                                        >
-                                    </td>
-                                    <td>
-                                        Number of company objects to generate
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
                     <h3 class="subsection-title">Example Request</h3>
                     <div class="code-block single-line">
                         <div class="code-header">
                             <span>Request URL</span>
                             <button
                                 class="copy-btn"
-                                data-copy="https://random-data-api-vvy8.onrender.com/api/random/companies/1"
+                                data-copy="https://random-data-api-iuit.onrender.com/api/random/companies/1"
                             >
                                 Copy
                             </button>
                         </div>
-                        <pre><code>GET https://random-data-api-vvy8.onrender.com/api/random/companies/1</code></pre>
+                        <pre><code>GET https://random-data-api-iuit.onrender.com/api/random/companies/1</code></pre>
                     </div>
 
                     <h3 class="subsection-title">Example Response</h3>
@@ -735,239 +519,6 @@
         "twitterUsername": "sncircle"
     }
 ]</code></pre>
-                    </div>
-
-                    <h3 class="subsection-title">Response Fields</h3>
-                    <div class="table-wrapper">
-                        <table class="doc-table">
-                            <thead>
-                                <tr>
-                                    <th>Field</th>
-                                    <th>Type</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>name</code></td>
-                                    <td>String</td>
-                                    <td>Company name</td>
-                                </tr>
-                                <tr>
-                                    <td><code>permalink</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        URL-safe slug identifier for the company
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>description</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        Short one-line description of the
-                                        company
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>overview</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        HTML-formatted longer description of the
-                                        company
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>products</code></td>
-                                    <td>Array&lt;Object&gt;</td>
-                                    <td>
-                                        Products offered — each has
-                                        <code>name</code> (String) and
-                                        <code>permalink</code> (String)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>relationships</code></td>
-                                    <td>Array</td>
-                                    <td>Known business relationships</td>
-                                </tr>
-                                <tr>
-                                    <td><code>competitions</code></td>
-                                    <td>Array</td>
-                                    <td>Known competitor companies</td>
-                                </tr>
-                                <tr>
-                                    <td><code>providership</code></td>
-                                    <td>String | null</td>
-                                    <td>
-                                        Service provider info, if applicable
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>investments</code></td>
-                                    <td>Array</td>
-                                    <td>Investment rounds received</td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices</code></td>
-                                    <td>Array&lt;Object&gt;</td>
-                                    <td>
-                                        Office locations — see sub-fields below
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices[].description</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        Office label (e.g.
-                                        <code>"Main office"</code>)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices[].address1</code></td>
-                                    <td>String</td>
-                                    <td>Street address line 1</td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices[].address2</code></td>
-                                    <td>String</td>
-                                    <td>Street address line 2</td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices[].zip_code</code></td>
-                                    <td>String</td>
-                                    <td>Postal / ZIP code</td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices[].city</code></td>
-                                    <td>String</td>
-                                    <td>City where the office is located</td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices[].state_code</code></td>
-                                    <td>String | null</td>
-                                    <td>State or region code</td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices[].country_code</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        ISO country code (e.g.
-                                        <code>"GBR"</code>, <code>"USA"</code>)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices[].latitude</code></td>
-                                    <td>Number</td>
-                                    <td>Geographic latitude of the office</td>
-                                </tr>
-                                <tr>
-                                    <td><code>offices[].longitude</code></td>
-                                    <td>Number</td>
-                                    <td>Geographic longitude of the office</td>
-                                </tr>
-                                <tr>
-                                    <td><code>milestones</code></td>
-                                    <td>Array</td>
-                                    <td>Key company milestones</td>
-                                </tr>
-                                <tr>
-                                    <td><code>blogUrl</code></td>
-                                    <td>String</td>
-                                    <td>URL to the company blog</td>
-                                </tr>
-                                <tr>
-                                    <td><code>categoryCode</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        Industry category (e.g.
-                                        <code>"software"</code>,
-                                        <code>"mobile"</code>)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>createdAt</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        Record creation timestamp (UTC string)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>crunchbaseUrl</code></td>
-                                    <td>String</td>
-                                    <td>
-                                        Link to the company's Crunchbase profile
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>foundedDay</code></td>
-                                    <td>Integer</td>
-                                    <td>
-                                        Day of month the company was founded
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>foundedMonth</code></td>
-                                    <td>Integer</td>
-                                    <td>Month the company was founded</td>
-                                </tr>
-                                <tr>
-                                    <td><code>foundedYear</code></td>
-                                    <td>Integer</td>
-                                    <td>Year the company was founded</td>
-                                </tr>
-                                <tr>
-                                    <td><code>homepageUrl</code></td>
-                                    <td>String</td>
-                                    <td>Company website URL</td>
-                                </tr>
-                                <tr>
-                                    <td><code>numberOfEmployees</code></td>
-                                    <td>Integer</td>
-                                    <td>Reported employee count</td>
-                                </tr>
-                                <tr>
-                                    <td><code>totalMoneyRaise</code></td>
-                                    <td>String | null</td>
-                                    <td>
-                                        Total funding raised (e.g.
-                                        <code>"$5M"</code>), or
-                                        <code>null</code>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><code>twitterUsername</code></td>
-                                    <td>String</td>
-                                    <td>Company Twitter / X handle</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="try-it-box" id="try-companies">
-                        <h3 class="try-title">⚡ Try It Live</h3>
-                        <div class="try-controls">
-                            <label>Count (1–20)</label>
-                            <input
-                                type="number"
-                                id="companies-count"
-                                value="2"
-                                min="1"
-                                max="20"
-                                class="try-input"
-                            />
-                            <button
-                                class="try-btn"
-                                onclick="tryEndpoint('companies')"
-                            >
-                                Send Request
-                            </button>
-                        </div>
-                        <div class="try-url-preview" id="companies-url-preview">
-                            https://random-data-api-vvy8.onrender.com/api/random/companies/2
-                        </div>
-                        <div class="try-response" id="companies-try-response">
-                            Response will appear here…
-                        </div>
                     </div>
                 </section>
 
